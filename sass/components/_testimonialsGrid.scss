@@ -1,109 +1,157 @@
-@use "../abstracts/colors";
-@use "../abstracts/mixins";
+@use "../abstracts";
 
-.testimonials-container {
+.testimonials-grid {
   display: grid;
-  place-items: center;
-}
+  gap: 1.5rem;
+  padding: 2rem;
 
-.testimonials {
-  width: 90%;
-  min-height: 100vh;
-  @include mixins.respond-to("small") {
-    display: grid;
+  min-height: 80vh;
+  margin: 0 auto;
+
+  @include abstracts.respond-to("small") {
     grid-template-columns: repeat(4, 1fr);
   }
-}
-.card-header {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  align-items: center;
 
-  & .card-name {
-    font-size: 1rem;
-    margin: 0;
+  @include abstracts.respond-to("large") {
+    max-width: 80%;
+    max-height: 80%;
   }
+}
 
-  & .card-occupation {
-    opacity: 70%;
+.card-header {
+  display: flex;
+  margin-bottom: 1rem;
+
+  & .card-title {
+    margin: 0 0 0 1rem;
+
+    & .name {
+      font-size: abstracts.$fs-500;
+      margin: 0;
+      font-weight: normal;
+    }
+
+    & .position {
+      opacity: 50%;
+      font-size: abstracts.$fs-400;
+    }
   }
 
   img {
     display: block;
     width: 40px;
     border-radius: 50%;
-    border: 3px solid lighten(colors.$clr-violet, 10%);
+    aspect-ratio: 1;
+    border: 3px solid abstracts.$clr-neutral;
   }
 }
+
 .testimonial-card {
-  background-color: colors.$clr-neutral;
+  background-color: abstracts.$clr-neutral;
+  color: abstracts.$clr-gray-blue;
   padding: 2rem;
-  margin: 1rem 0;
   border-radius: 0.5rem;
+  box-shadow: 2px 2px 25px -5px abstracts.$clr-gray-blue;
 
   & .card-occuption,
   .card-text {
-    color: colors.$clr-light-gray;
+    color: abstracts.$clr-gray-blue;
     opacity: 70%;
   }
-}
 
-.testimonial-card {
-  &.daniel-card {
-    background-image: url("/images/bg-pattern-quotation.svg");
-    background-repeat: no-repeat;
-    background-position: 90% 0%;
-    background-color: colors.$clr-violet;
-    grid-column: 1 / span 2;
-    grid-row: 1;
-
-    @include mixins.respond-to("medium") {
-      background-position: 85% 0%;
-    }
+  & .card-quote {
+    font-size: abstracts.$fs-600;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    line-height: 1.6rem;
   }
 
-  &.jonathan-card {
-    background-color: colors.$clr-gray-blue;
-    grid-column: 3 / span 2;
-
-    @include mixins.respond-to("large") {
-      grid-column: 3;
-      grid-row: 1;
-    }
-  }
-
-  &.kira-card {
-    grid-column: 1 / span 4;
-    grid-row: 2;
-
-    @include mixins.respond-to("large") {
-      grid-column: 4;
-      grid-row: 1 / span 2;
-    }
-  }
-
-  &.jeanette-card {
-    grid-column: 1 / span 2;
-    grid-row: 3;
-
-    @include mixins.respond-to("large") {
-      grid-column: 1;
-      grid-row: 2;
-    }
-  }
-
-  &.patrick-card {
-    background-color: colors.$clr-black-blue;
-    grid-column: 3 / span 2;
-    grid-row: 3;
-
-    @include mixins.respond-to("large") {
-      grid-column: 2 / span 2;
-      grid-row: 2;
-    }
+  & .card-text {
+    font-size: abstracts.$fs-500;
   }
 }
 
 .testimonial-card.dark {
-  color: colors.$clr-neutral;
+  color: abstracts.$clr-neutral;
+
+  & .card-occuption,
+  .card-text {
+    color: abstracts.$clr-light-gray;
+  }
+}
+
+// Different testimonial cards
+.daniel-card {
+  background-image: url("/images/bg-pattern-quotation.svg");
+  background-repeat: no-repeat;
+  background-position: 90% 0%;
+  background-color: abstracts.$clr-violet;
+
+  & .card-header img {
+    border: 2px solid lighten(abstracts.$clr-violet, 10%);
+  }
+  @include abstracts.respond-to("small") {
+    grid-column: 1 / span 2;
+    grid-row: 1;
+  }
+  @include abstracts.respond-to("medium") {
+    background-position: 85% 0%;
+  }
+}
+
+.jonathan-card {
+  background-color: abstracts.$clr-gray-blue;
+
+  & .card-header img {
+    border: 3px solid abstracts.$clr-neutral;
+  }
+
+  @include abstracts.respond-to("small") {
+    grid-column: 3 / span 2;
+  }
+
+  @include abstracts.respond-to("huge") {
+    grid-column: 3;
+    grid-row: 1;
+  }
+}
+
+.kira-card {
+  @include abstracts.respond-to("small") {
+    grid-column: 1 / span 4;
+    grid-row: 2;
+  }
+
+  @include abstracts.respond-to("huge") {
+    grid-column: 4;
+    grid-row: 1 / span 2;
+  }
+}
+
+.jeanette-card {
+  @include abstracts.respond-to("small") {
+    grid-column: 1 / span 2;
+    grid-row: 3;
+  }
+  @include abstracts.respond-to("huge") {
+    grid-column: 1;
+    grid-row: 2;
+  }
+}
+
+.patrick-card {
+  background-color: abstracts.$clr-black-blue;
+
+  & .card-header img {
+    border: 2px solid lighten(abstracts.$clr-violet, 10%);
+  }
+
+  @include abstracts.respond-to("small") {
+    grid-column: 3 / span 2;
+    grid-row: 3;
+  }
+  @include abstracts.respond-to("huge") {
+    grid-column: 2 / span 2;
+    grid-row: 2;
+  }
 }
