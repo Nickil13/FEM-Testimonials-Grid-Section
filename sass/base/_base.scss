@@ -8,8 +8,11 @@
   box-sizing: border-box;
 }
 
-body {
+html {
   position: relative;
+}
+
+body {
   display: grid;
   place-content: center;
   min-height: 100vh;
@@ -19,7 +22,7 @@ body {
 
   background-color: abstracts.$clr-light-gray-blue;
 
-  padding-bottom: 100px;
+  margin-bottom: 100px;
 }
 
 p {
