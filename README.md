@@ -26,10 +26,9 @@ Users should be able to:
 
 ![Testimonials Grid Section Screenshot](https://user-images.githubusercontent.com/36387179/155017325-b68cc8a5-17f2-4968-a683-bb5b83837a11.png)
 
-
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [Solution on Frontend Mentor](https://www.frontendmentor.io/solutions/mobilefirst-testimonials-grid-with-scss-and-html-xb_Y9V_QH)
 - Live Site URL: [GitHub Pages](https://nickil13.github.io/FEM-Testimonials-Grid-Section/)
 
 ## My process
