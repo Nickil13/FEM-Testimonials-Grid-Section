@@ -1,0 +1,109 @@
+@use "../abstracts/colors";
+@use "../abstracts/mixins";
+
+.testimonials-container {
+  display: grid;
+  place-items: center;
+}
+
+.testimonials {
+  width: 90%;
+  min-height: 100vh;
+  @include mixins.respond-to("small") {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+.card-header {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+
+  & .card-name {
+    font-size: 1rem;
+    margin: 0;
+  }
+
+  & .card-occupation {
+    opacity: 70%;
+  }
+
+  img {
+    display: block;
+    width: 40px;
+    border-radius: 50%;
+    border: 3px solid lighten(colors.$clr-violet, 10%);
+  }
+}
+.testimonial-card {
+  background-color: colors.$clr-neutral;
+  padding: 2rem;
+  margin: 1rem 0;
+  border-radius: 0.5rem;
+
+  & .card-occuption,
+  .card-text {
+    color: colors.$clr-light-gray;
+    opacity: 70%;
+  }
+}
+
+.testimonial-card {
+  &.daniel-card {
+    background-image: url("/images/bg-pattern-quotation.svg");
+    background-repeat: no-repeat;
+    background-position: 90% 0%;
+    background-color: colors.$clr-violet;
+    grid-column: 1 / span 2;
+    grid-row: 1;
+
+    @include mixins.respond-to("medium") {
+      background-position: 85% 0%;
+    }
+  }
+
+  &.jonathan-card {
+    background-color: colors.$clr-gray-blue;
+    grid-column: 3 / span 2;
+
+    @include mixins.respond-to("large") {
+      grid-column: 3;
+      grid-row: 1;
+    }
+  }
+
+  &.kira-card {
+    grid-column: 1 / span 4;
+    grid-row: 2;
+
+    @include mixins.respond-to("large") {
+      grid-column: 4;
+      grid-row: 1 / span 2;
+    }
+  }
+
+  &.jeanette-card {
+    grid-column: 1 / span 2;
+    grid-row: 3;
+
+    @include mixins.respond-to("large") {
+      grid-column: 1;
+      grid-row: 2;
+    }
+  }
+
+  &.patrick-card {
+    background-color: colors.$clr-black-blue;
+    grid-column: 3 / span 2;
+    grid-row: 3;
+
+    @include mixins.respond-to("large") {
+      grid-column: 2 / span 2;
+      grid-row: 2;
+    }
+  }
+}
+
+.testimonial-card.dark {
+  color: colors.$clr-neutral;
+}

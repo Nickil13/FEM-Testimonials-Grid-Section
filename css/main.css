@@ -1,0 +1,124 @@
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #ecf2f8;
+  font-family: "Barlow Semi Condensed", sans-serif;
+}
+
+p {
+  line-height: 1.6rem;
+}
+
+.testimonials-container {
+  display: grid;
+  place-items: center;
+}
+
+.testimonials {
+  width: 90%;
+  min-height: 100vh;
+}
+@media (min-width: 600px) {
+  .testimonials {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.card-header {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+}
+.card-header .card-name {
+  font-size: 1rem;
+  margin: 0;
+}
+.card-header .card-occupation {
+  opacity: 70%;
+}
+.card-header img {
+  display: block;
+  width: 40px;
+  border-radius: 50%;
+  border: 3px solid #9269d3;
+}
+
+.testimonial-card {
+  background-color: white;
+  padding: 2rem;
+  margin: 1rem 0;
+  border-radius: 0.5rem;
+}
+.testimonial-card .card-occuption,
+.testimonial-card .card-text {
+  color: #cfcfcf;
+  opacity: 70%;
+}
+
+.testimonial-card.daniel-card {
+  background-image: url("/images/bg-pattern-quotation.svg");
+  background-repeat: no-repeat;
+  background-position: 90% 0%;
+  background-color: #7541c8;
+  grid-column: 1/span 2;
+  grid-row: 1;
+}
+@media (min-width: 800px) {
+  .testimonial-card.daniel-card {
+    background-position: 85% 0%;
+  }
+}
+.testimonial-card.jonathan-card {
+  background-color: #48556a;
+  grid-column: 3/span 2;
+}
+@media (min-width: 1000px) {
+  .testimonial-card.jonathan-card {
+    grid-column: 3;
+    grid-row: 1;
+  }
+}
+.testimonial-card.kira-card {
+  grid-column: 1/span 4;
+  grid-row: 2;
+}
+@media (min-width: 1000px) {
+  .testimonial-card.kira-card {
+    grid-column: 4;
+    grid-row: 1/span 2;
+  }
+}
+.testimonial-card.jeanette-card {
+  grid-column: 1/span 2;
+  grid-row: 3;
+}
+@media (min-width: 1000px) {
+  .testimonial-card.jeanette-card {
+    grid-column: 1;
+    grid-row: 2;
+  }
+}
+.testimonial-card.patrick-card {
+  background-color: #19212e;
+  grid-column: 3/span 2;
+  grid-row: 3;
+}
+@media (min-width: 1000px) {
+  .testimonial-card.patrick-card {
+    grid-column: 2/span 2;
+    grid-row: 2;
+  }
+}
+
+.testimonial-card.dark {
+  color: white;
+}
+
+/*# sourceMappingURL=main.css.map */

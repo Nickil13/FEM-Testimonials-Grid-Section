@@ -1,0 +1,17 @@
+@use "../abstracts";
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: abstracts.$clr-light-gray-blue;
+  font-family: abstracts.$ff-primary;
+}
+
+p {
+  line-height: 1.6rem;
+}
