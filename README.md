@@ -24,7 +24,8 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![Testimonials Grid Section Screenshot](https://user-images.githubusercontent.com/36387179/155017325-b68cc8a5-17f2-4968-a683-bb5b83837a11.png)
+
 
 ### Links
 
