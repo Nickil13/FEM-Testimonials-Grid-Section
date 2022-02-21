@@ -5,41 +5,37 @@
   gap: 1.5rem;
   padding: 2rem;
 
-  min-height: 80vh;
   margin: 0 auto;
+  max-width: 74rem;
 
   @include abstracts.respond-to("small") {
     grid-template-columns: repeat(4, 1fr);
-  }
-
-  @include abstracts.respond-to("large") {
-    max-width: 80%;
-    max-height: 80%;
   }
 }
 
 .card-header {
   display: flex;
+  line-height: 1;
   margin-bottom: 1rem;
 
   & .card-title {
     margin: 0 0 0 1rem;
 
     & .name {
-      font-size: abstracts.$fs-500;
+      font-size: abstracts.$fs-400;
       margin: 0;
       font-weight: normal;
     }
 
     & .position {
       opacity: 50%;
-      font-size: abstracts.$fs-400;
+      font-size: abstracts.$fs-300;
     }
   }
 
   img {
     display: block;
-    width: 40px;
+    width: 1.75rem;
     border-radius: 50%;
     aspect-ratio: 1;
     border: 3px solid abstracts.$clr-neutral;
@@ -51,7 +47,7 @@
   color: abstracts.$clr-gray-blue;
   padding: 2rem;
   border-radius: 0.5rem;
-  box-shadow: 2px 2px 25px -5px abstracts.$clr-gray-blue;
+  box-shadow: 2px 2px 25px -15px abstracts.$clr-gray-blue;
 
   & .card-occuption,
   .card-text {
@@ -60,14 +56,14 @@
   }
 
   & .card-quote {
-    font-size: abstracts.$fs-600;
+    font-size: abstracts.$fs-500;
     font-weight: 600;
     margin-bottom: 1rem;
     line-height: 1.6rem;
   }
 
   & .card-text {
-    font-size: abstracts.$fs-500;
+    font-size: abstracts.$fs-400;
   }
 }
 

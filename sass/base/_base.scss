@@ -23,6 +23,10 @@ body {
   background-color: abstracts.$clr-light-gray-blue;
 
   margin-bottom: 100px;
+
+  @include abstracts.respond-to("huge") {
+    margin-bottom: 0px;
+  }
 }
 
 p {
